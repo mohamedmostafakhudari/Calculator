@@ -1,0 +1,21 @@
+- [ ] i can do basic math operations
+  - [ ] i can enter digits
+  - [ ] i can choose operator
+  - [ ] i can make the calculation and have the result
+- [ ] i can clear the state of the calculator and start fresh
+- [ ] i want to have buttons for digits and operators (including =) to use the calculator
+- [ ] i want to see a display of the buttons i click on and results
+- [ ] i should have only 2 operands and operator evaluated at a time
+  - [ ] if i have a pair of digits and hit equal then a digit then equal again, the first pair should evaluate the be registered as the first operand
+  - [ ] if i have a pair of digits and hit equal then hit another operator (+-*/), the first pair should evaluate the be 
+  registered as the first operand
+  - [ ] if i hit equal before entering all the numbers or an operator, it should be ignored
+  - [ ] if consecutive operator buttons are pressed, you shouldn't run any evaluation (e.g. 2 + +)
+- [ ] answers with long decimals should be rounded to prevent overflowing the display
+- [ ] division by 0 should result to appropriate error message
+- [ ] when a result is displayed, pressing a new digit clears the result and start a new calculation
+- [ ] i can enter decimal point when i type the numbers
+- [ ] i can only type one decimal point in a number
+- [ ] decimal point button is disabled if there's already a decimal separator in the display
+- [ ] i can undo my last input using a backspace button
+- [ ] i can use the calculator with my keyboard

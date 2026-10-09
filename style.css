@@ -1,0 +1,67 @@
+
+.calculator-body {
+  --equal-btn-color: rgb(134, 23, 23);
+  --equal-btn-hover-color: rgb(186, 37, 37);
+  --function-btn-color: rgb(79, 24, 128);
+  --function-btn-hover-color: rgb(111, 35, 177);
+  --operator-btn-color: rgb(49 111 200);
+  --operator-btn-hover-color: rgb(49, 145, 200);
+  --digit-btn-color: rgb(20, 111, 23);
+  --digit-btn-hover-color: rgb(23, 156, 28);
+ 
+  width: 230px;
+  background-color: var(--color-surface);
+  margin-inline: auto;
+
+  .display {
+    padding: var(--space-4);
+  }
+
+  .buttons {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    padding-top: 0;
+  }
+
+  .btn {
+    flex-basis: 40px;
+  }
+  
+  .btn:not([data-type=function]) {
+    aspect-ratio: 1;
+  }
+
+  .btn[data-type=operator] {
+    background-color: var(--operator-btn-color);
+  }
+
+  .btn[data-type=operator]:hover {
+    background-color: var(--operator-btn-hover-color);
+  }
+
+  .btn[data-type=digit], .btn[data-type=separator] {
+    background-color: var(--digit-btn-color);
+  }
+
+  .btn[data-type=digit]:hover, .btn[data-type=separator]:hover {
+    background-color: var(--digit-btn-hover-color);
+  }
+
+  .btn[data-type=function] {
+    background-color: var(--function-btn-color);
+  }
+
+  .btn[data-type=function]:hover {
+    background-color: var(--function-btn-hover-color);
+  }
+
+  .btn[data-type=operator][data-value="="] {
+    background-color: var(--equal-btn-color);
+  }
+
+  .btn[data-type=operator][data-value="="]:hover {
+    background-color: var(--equal-btn-hover-color);
+  }
+}
