@@ -8,15 +8,12 @@ calculatorBody.addEventListener("click", (e) => {
   if (!button) return;
   
   const { type, value } = button.dataset;
-  try {
-    if (type === 'digit') {
-      calculator.appendDigit(value);
-    } else if (type === 'operator') {
-      calculator.setOperator(value);
-    }
-  } catch (error) {
-    console.log(error.message);
+  if (type === 'digit') {
+    calculator.appendDigit(value);
+  } else if (type === 'operator') {
+    calculator.setOperator(value);
   }
+  
   
   const currentState = calculator.getCurrentState();
   ui.renderDisplay(currentState);

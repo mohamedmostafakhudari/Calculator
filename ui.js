@@ -7,9 +7,16 @@ function applyVisualHints(state) {
   });
 }
 
-export function renderDisplay(state) {
-  applyVisualHints(state);
-
+function renderValue(state) {
+  if (state.hasError) {
+    displayContent.textContent = "Math Error";
+    return;
+  }
   const value = state.secondOperand !== '' ? state.secondOperand : state.firstOperand;
   displayContent.textContent = value || '0';
+}
+export function renderDisplay(state) {
+  applyVisualHints(state);
+  renderValue(state);
+  displayContent.classList.toggle("error", state.hasError);
 }

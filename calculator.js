@@ -16,15 +16,14 @@ function calculateResult() {
     const result = operators[operator](+firstOperand, +secondOperand); 
     return result;
   } catch (error) {
-    clearState();
-    throw error;
+    state.hasError = true;
   }
 }
 
 export function appendDigit(digit) {
   // adding digit immediately after hitting equal should clear state
   // then append digit to the first operand
-  if (state.operator === "=") clearState();
+  if (state.operator === "=" || state.hasError) clearState();
   
   if (state.operator) {
     state.secondOperand = applyNumberShapeRules(state.secondOperand + digit);
@@ -34,14 +33,14 @@ export function appendDigit(digit) {
 }
 
 export function setOperator(operatorSign) {
-  if (!state.firstOperand) return;
+  if (!state.firstOperand || state.hasError) return;
   
   if (state.firstOperand && !state.secondOperand) {
     state.operator = operatorSign;
   }
 
   if (state.firstOperand && state.secondOperand) {
-    state.firstOperand = calculateResult().toString();
+    state.firstOperand = calculateResult()?.toString();
     state.secondOperand = '';
     state.operator = operatorSign;
   }
@@ -105,6 +104,7 @@ function getInitialState() {
       firstOperand: '',
       secondOperand: '',
       operator: '', 
+      hasError: false,
     }
 );
 }

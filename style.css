@@ -17,6 +17,10 @@
     padding: var(--space-4);
   }
 
+  .display > .display-content.error {
+    color: var(--color-error);
+  }
+  
   .buttons {
     display: flex;
     flex-flow: row wrap;
