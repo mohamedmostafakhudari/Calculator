@@ -1,7 +1,7 @@
-- [ ] i can do basic math operations
-  - [ ] i can enter digits
-  - [ ] i can choose operator
-  - [ ] i can make the calculation and have the result
+- [x] i can do basic math operations
+  - [x] i can enter digits
+  - [x] i can choose operator
+  - [x] i can make the calculation and have the result
 - [ ] i can clear the state of the calculator and start fresh
 - [ ] i want to have buttons for digits and operators (including =) to use the calculator
 - [ ] i want to see a display of the buttons i click on and results
