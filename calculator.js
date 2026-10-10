@@ -1,3 +1,4 @@
+const MAXIMUM_NUMBER_LENGTH = 20;
 let state = getInitialState();
 
 const operators = {
@@ -56,7 +57,7 @@ export function getCurrentState() {
 
 function applyNumberShapeRules(number) {
   // number is maximum 12 character length
-  number = number.slice(0, 12);
+  number = number.slice(0, MAXIMUM_NUMBER_LENGTH);
 
   return number;
 }
@@ -92,8 +93,10 @@ function divide(x, y) {
   if (y === 0) {
     throw new Error("Math error!");
   }
-  
-  return Number.parseFloat((x / y).toFixed(8));
+  /*
+    MAXIMUM_NUMBER_LENGTH - 2 :  to subtract the 0 digit and the decimal point
+  */
+  return Number.parseFloat((x / y).toFixed(MAXIMUM_NUMBER_LENGTH - 2));
 }
 
 function getInitialState() {

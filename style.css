@@ -37,7 +37,7 @@
     background-color: var(--operator-btn-color);
   }
 
-  .btn[data-type=operator]:hover {
+  .btn[data-type=operator]:hover, .btn[data-type=operator].active {
     background-color: var(--operator-btn-hover-color);
   }
 
