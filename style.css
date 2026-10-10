@@ -1,5 +1,6 @@
 
 .calculator-body {
+  --btn-disabled-color: rgb(101, 100, 102);
   --equal-btn-color: rgb(134, 23, 23);
   --equal-btn-hover-color: rgb(186, 37, 37);
   --function-btn-color: rgb(79, 24, 128);
@@ -20,7 +21,7 @@
   .display > .display-content.error {
     color: var(--color-error);
   }
-  
+
   .buttons {
     display: flex;
     flex-flow: row wrap;
@@ -67,5 +68,9 @@
 
   .btn[data-type=operator][data-value="="]:hover {
     background-color: var(--equal-btn-hover-color);
+  }
+
+  .btn:disabled, .btn:hover:disabled, .btn:focus:disabled, .btn:active:disabled {
+    background-color: var(--btn-disabled-color, rgb(101, 100, 102));
   }
 }

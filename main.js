@@ -12,10 +12,13 @@ calculatorBody.addEventListener("click", (e) => {
     calculator.appendDigit(value);
   } else if (type === 'operator') {
     calculator.setOperator(value);
+  } else if (type === 'separator') {
+    calculator.appendSeparator(value);
   }
   
   
   const currentState = calculator.getCurrentState();
+  console.log(currentState);
   ui.renderDisplay(currentState);
 });
 
