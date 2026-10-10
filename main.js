@@ -19,4 +19,13 @@ calculatorBody.addEventListener("click", (e) => {
   
   const currentState = calculator.getCurrentState();
   console.log(currentState);
-})
+});
+
+const clearBtn = document.querySelector("button[data-type=function][data-value=clear]");
+clearBtn.addEventListener("click", () => {
+  calculator.clearState();
+
+  const currentState = calculator.getCurrentState();
+  console.log(currentState);  
+});
+

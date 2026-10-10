@@ -2,8 +2,8 @@
   - [x] i can enter digits
   - [x] i can choose operator
   - [x] i can make the calculation and have the result
-- [ ] i can clear the state of the calculator and start fresh
-- [ ] i want to have buttons for digits and operators (including =) to use the calculator
+- [x] i can clear the state of the calculator and start fresh
+- [x] i want to have buttons for digits and operators (including =) to use the calculator
 - [ ] i want to see a display of the buttons i click on and results
 - [ ] i should have only 2 operands and operator evaluated at a time
   - [ ] if i have a pair of digits and hit equal then a digit then equal again, the first pair should evaluate the be registered as the first operand
