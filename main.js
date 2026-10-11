@@ -18,7 +18,6 @@ calculatorBody.addEventListener("click", (e) => {
   
   
   const currentState = calculator.getCurrentState();
-  console.log(currentState);
   ui.renderDisplay(currentState);
 });
 
@@ -30,3 +29,10 @@ clearBtn.addEventListener("click", () => {
   ui.renderDisplay(currentState);
 });
 
+const undoBtn = document.querySelector("button[data-type=function][data-value=undo]");
+undoBtn.addEventListener("click", () => {
+  calculator.undo();
+
+  const currentState = calculator.getCurrentState();
+  ui.renderDisplay(currentState);
+});

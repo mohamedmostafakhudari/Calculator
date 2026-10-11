@@ -1,5 +1,7 @@
 const MAXIMUM_NUMBER_LENGTH = 20;
+const MAXIMUM_HISTORY_SIZE = 5;
 
+const history = [];
 let state = getInitialState();
 
 const operators = {
@@ -8,6 +10,21 @@ const operators = {
   '*': multiply,
   '/': divide,
 };
+
+function addHistory(state) {
+  history.push({...state});
+  if (history.length > MAXIMUM_HISTORY_SIZE) {
+    history.shift();
+  }
+}
+
+function pullLatestHistory() {
+  return history.pop();
+}
+
+function clearHistory() {
+  history.length = 0;
+}
 
 function calculateResult() {
   if (!state.firstOperand || !state.secondOperand) return;
@@ -77,6 +94,8 @@ function getInitialState() {
 }
 
 export function appendDigit(digit) {
+  addHistory(state);
+  
   // adding digit immediately after hitting equal should clear state
   // then append digit to the first operand
   if (state.operator === "=" || state.hasError) clearState();
@@ -86,9 +105,12 @@ export function appendDigit(digit) {
   } else {
     state.firstOperand = applyNumberShapeRules(state.firstOperand + digit);
   }
+
 }
 
 export function appendSeparator(separator) {
+  addHistory(state);
+
   if (state.operator === "=" || state.hasError) clearState();
   
   if (state.operator) {
@@ -108,6 +130,8 @@ export function appendSeparator(separator) {
 export function setOperator(operatorSign) {
   if (!state.firstOperand || state.hasError) return;
   
+  addHistory(state);
+
   if (state.firstOperand && !state.secondOperand) {
     state.operator = operatorSign;
   }
@@ -124,8 +148,16 @@ export function setOperator(operatorSign) {
   }
 } 
 
+export function undo() {
+  const previousState = pullLatestHistory();
+  if (previousState) {
+    state = previousState;
+  }
+}
+
 export function clearState() {
   state = getInitialState();
+  clearHistory();
 }
 
 export function getCurrentState() {

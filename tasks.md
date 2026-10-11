@@ -17,5 +17,5 @@
 - [x] i can enter decimal point when i type the numbers
 - [x] i can only type one decimal point in a number
 - [x] decimal point button is disabled if there's already a decimal separator in the display
-- [ ] i can undo my last input using a backspace button
+- [x] i can undo my last input using a backspace button
 - [ ] i can use the calculator with my keyboard
