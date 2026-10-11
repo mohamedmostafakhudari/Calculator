@@ -18,4 +18,4 @@
 - [x] i can only type one decimal point in a number
 - [x] decimal point button is disabled if there's already a decimal separator in the display
 - [x] i can undo my last input using a backspace button
-- [ ] i can use the calculator with my keyboard
+- [x] i can use the calculator with my keyboard

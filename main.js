@@ -1,5 +1,6 @@
 import * as calculator from "./calculator.js";
 import * as ui from "./ui.js";
+import * as keyboard from "./keyboard.js";
 
 const calculatorBody = document.querySelector("#calculator-body");
 
@@ -33,6 +34,14 @@ const undoBtn = document.querySelector("button[data-type=function][data-value=un
 undoBtn.addEventListener("click", () => {
   calculator.undo();
 
+  const currentState = calculator.getCurrentState();
+  ui.renderDisplay(currentState);
+});
+
+document.addEventListener("keyup", (e) => {
+  const controls = keyboard.getControls();
+  controls[e.key]?.();
+  
   const currentState = calculator.getCurrentState();
   ui.renderDisplay(currentState);
 });
